@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(Aurora.jpg);
+    background-size: cover;
+    font-family: arial;
+}
+
+/*
+.Search-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #e84118; 
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+}
+
+.search-btn{
+    color: #e84118;
+    float: right;
+    width:40%
+    height: 40%;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items:center; 
+}
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 30px;
+    transition: 0.4s all;
+    line-height: 40px;
+    width: 240px;
+}
+.fa-search-location{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #333300;
+    font-size: 40px;
+    transition: 0.4s all;
+    
+}
+*/
+header{
+    background-size: cover;
+    background-position: center;    
+}
+ul{
+    float: right;
+    list-style-type: none;
+}
+ul li{
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color: aqua;
+    padding: 5px 20px;
+    border: 1px solid #fff;
+    transition: 0.6s ease;
+}
+ul li a:hover{
+    background-color: antiquewhite;
+    color:#000;  
+}
+ul li.active a{
+    background-color: antiquewhite;
+    color:#000;  
+}
+.main{
+    max-width: 1200px;
+    margin: auto;
+}
+.text{
+   position: absolute;
+    top: 40%;
+    left:40%;
+    text-decoration: none;
+    transform: translate(-40%,-40%);
+    background-color: antiquewhite;
+   
+}
+

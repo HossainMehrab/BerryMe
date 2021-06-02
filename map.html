@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://npmcdn.com/parse@1.10.0/dist/parse.min.js"></script>
+	<script src="js/marker.js"></script>
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+    <link rel="stylesheet" type="text/css" href="cs/stylea1.css">
+	
+    <title>Berry Map</title>
+    <style>
+        *{
+            margin: 0 px;
+            padding: 0 px;
+        }
+        #map {
+            height:600px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+
+    
+<header>
+      <div class="header">
+        
+        <ul>
+            <li>
+             <div class='PreF'><button><a href="Home.html">Home</a></button></div>
+            </li>   
+            <li class="active">
+            
+             <div class='PreF'><button><a href=#>LocateMe</a></button></div>
+            
+            </li>
+           <li> <a onclick="getBerry('all')" id="showAll" class="" href="#">BerryField</a></li>
+            <li>
+             <div class='PreF'><button><a href="add.html">ADD</a></button></div>
+            </li> 
+<!--
+            <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="findBerry" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Addberry
+              </a>  
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a onclick="getBerry('Raspberry')" id="showRasp" class="dropdown-item" href="#">RaspBerry</a>
+                
+                <a onclick="getBerry('Lingonberry')" id="showLingon" class="dropdown-item" href="#">Lingonberry</a>
+                    
+                <a onclick="getBerry('Gooseberry')" id="showGoose" class="dropdown-item" href="#">Gooseberry</a>
+                    
+                <a onclick="getBerry('Cloudberry')" id="showCloud" class="dropdown-item" href="#">Cloudberry</a>
+              </div> 
+</li>
+-->
+            
+            <li ><div class='PreF'><button><a href="Gmap.html">MarkedField</a></button></div></li>
+</ul>
+</div>
+</header> 
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+<!--
+    <script src="marker.js"></script>
+    <button id="mybtn" onClick='addMarker'>Berry</button>
+-->
+    <div id="map"></div>
+        <script>
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 62.600990, lng: 29.763530},
+          zoom: 7
+        });
+		
+        infoWindow = new google.maps.InfoWindow;
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+              
+     
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('USER');
+             //nfoWindow.setMarker(map:map);
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+          'Error: The Geolocation service failed.' :
+          'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+        
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALvGcifFa11oMWpKxqr5F2tNVF2bdHVQ0&callback=initMap"></script>
+<!--    <script src="marker.js"></script>-->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: none;
+   color: red;
+   text-align: center;
+}
+</style>
+     <div class="footer">
+         <p>&copy; Impit, UEF-2018</p>
+    </div>
+    <script src="https://npmcdn.com/parse@1.10.0/dist/parse.min.js"></script>
+    
+    <script type="text/javascript" src="script.js"></script>
+             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</body>    
+</html>

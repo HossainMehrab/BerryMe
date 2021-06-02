@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://npmcdn.com/parse@1.10.0/dist/parse.min.js"></script>
+    
+        
+             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+
+
+    <link rel="stylesheet" type="text/css" href="cs/stylea1.css">
+    <title>Berry Map</title>
+    <style>
+        *{
+            margin: 0 px;
+            padding: 0 px;
+        }
+        #map {
+            height:780px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    
+
+    
+<header>
+    <div class="header">
+        
+        <ul>
+            <li>
+             <div class='PreF'><button><a href="Home.html">Home</a></button></div>
+            </li>
+            <li>
+             <div class='PreF'><button><a href="map.html">LocateMe</a></button></div>
+            </li>
+           <li> <a onclick="getBerry('all')" id="showAll" class="" href="#">BerryField</a></li>
+            
+            <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="findBerry" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Addberry
+              </a>  
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a onclick="getBerry('Raspberry')" id="showRasp" class="dropdown-item" href="#">RaspBerry</a>
+                
+                <a onclick="getBerry('Lingonberry')" id="showLingon" class="dropdown-item" href="#">Lingonberry</a>
+                    
+                <a onclick="getBerry('Gooseberry')" id="showGoose" class="dropdown-item" href="#">Gooseberry</a>
+                    
+                <a onclick="getBerry('Cloudberry')" id="showCloud" class="dropdown-item" href="#">Cloudberry</a>
+              </div> 
+</li>
+            
+            <li class="active"><div class='PreF'><button><a href=#>MarkedField</a></button></div></li>
+</ul>
+</div>
+</header> 
+    
+    
+    
+     <div id="map"></div>
+     <script src="js/geoloc.js"></script>
+   
+    
+    //
+    <!--    Try Some Different Way
+
+
+<script>
+      var map, infoWindow;
+
+      function initMap() {   
+        infoWindow = {
+          center: {lat:62.600990,lng:29.763531},
+          zoom: 5
+        }
+
+
+      map = new google.maps.Map(document.getElementById('map'),infoWindow);
+
+
+            //add here --------markers is a array
+            //ay khane single akta value o dite parbi image dite caile dite parbi
+            //title i mean name ta o dite parbi
+
+            var markers=[{coordinates:{lat:62.586895,lng:29.768486},iconImage:'Berry.png',address:' Dewberry'},
+                         {coordinates:{lat:62.603232 ,lng:29.73325},iconImage:'Berry.png',  address:'Raspberry'},
+                         {coordinates:{lat:62.633804,lng:29.817238},iconImage:'Berry.png',  address:'Goseberry'}]
+          
+
+
+
+           for(i=0;i<markers.length;i++){
+
+              addMarker(markers[i]);
+            }
+
+            // change marker icon here for all 
+
+         var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+
+        function addMarker(listedItem){
+
+          var marker = new google.maps.Marker({
+            position:listedItem.coordinates,
+            map:map,
+            
+          });
+
+          if(listedItem.image){
+            marker.setIcon(listedItem.image);
+          }
+            else 
+            {
+              marker.setIcon(listedItem.image);
+            }
+
+          if(listedItem.address){
+
+          var address = new google.maps.InfoWindow({
+                      content:listedItem.address
+          });
+
+            marker.addListener('click',function(){
+              address.open(map,marker);
+
+            }); 
+
+          }
+          else 
+          {
+            var address = new google.maps.InfoWindow({
+                      //change it if you want . jodi cas to change korte parbi just msg ta 
+                      content:'<h2>User Location</h2>'
+                
+          });
+
+            marker.addListener('click',function(){
+              address.open(map,marker);
+
+            }); 
+
+          }
+
+        }
+          
+    } 
+
+    </script>-->
+    
+    
+    
+    <script src="js/marker.js"></script>
+    
+    
+    
+    
+        
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALvGcifFa11oMWpKxqr5F2tNVF2bdHVQ0&callback=initMap"></script>
+    
+    
+    
+    
+    
+    
+    
+<!--    -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: none;
+   color: red;
+   text-align: center;
+}
+</style>
+     <div class="footer">
+         <p>&copy; Impit, UEF-2018</p>
+    </div>
+    <script src="https://npmcdn.com/parse@1.10.0/dist/parse.min.js"></script>
+    
+    <script type="text/javascript" src="script.js"></script>
+             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</body>    
+</html>

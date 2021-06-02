@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://npmcdn.com/parse@1.10.0/dist/parse.min.js"></script>
+	<script src="js/marker.js"></script>
+	<script src="script.js"></script>
+<!--    <script src="js/save.js"></script>-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom css -->
+    <link rel="stylesheet" type="text/css" href="cs/stylea1.css">
+    
+        <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <title>Add Berry</title>
+
+<body>
+
+    <header>
+      <div class="header">
+        
+        <ul>
+            <li>
+             <div class='PreF'><button><a href="Home.html">Home</a></button></div>
+           <li> <a onclick="getBerry('all')" id="showAll" class="" href="map.html">BerryField</a></li>
+            <li> <a class="" href="#">Add Berry</a></li>
+            
+            <li ><div class='PreF'><button><a href="Gmap.html">MarkedField</a></button></div></li>
+        </ul>
+        </div>
+    </header> 
+
+
+    <section class="add_berry">
+        <div class="card">
+          <div class="card-header">
+            <h5>ADD BERRY</h5>
+          </div>
+          <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label for="selectB">Select Your Berry</label>
+                        <select class="form-control" id="selectB" required>
+                            <option>Strawberry</option>
+                            <option>RaspBerry</option>
+                            <option>Blackberry</option>
+                            <option>Blueberry</option>\
+                        </select>
+                    </div>
+                </div>
+            
+                <div class="form-group row">
+                    
+                    <div class="col-md-6 latlang">
+                        <label for="lat">Latitude</label>
+                        <input type="text" class="form-control latlang" id="lat" name="lat" value="" placeholder="latitude">
+                    </div>
+                    <div class="col-md-6 latlang">
+                        <label for="lang">longitude</label>
+                        <input type="text" class="form-control" id="lang" name="lang" value="" placeholder="longitude">
+                    </div>
+                </div>
+                
+            </form>
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <button onclick="saveBerry()" class="btn btn-primary" type="submit">Save changes</button>
+          </div>
+        </div>
+    </section>
+</body>
+</html>
